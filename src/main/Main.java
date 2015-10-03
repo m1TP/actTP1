@@ -1,8 +1,12 @@
 package main;
 
+import implementation.Exo6;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import util.Building;
 import util.IO;
 import util.Point;
 
@@ -14,11 +18,11 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		List<Point> l = new ArrayList<Point>();
-		for(int i=2;i<7;i++)
-			l.add(new Point(i,(int)Math.pow(-2, i)));
+		List<Building> lb = IO.readBuilding(new File("building.txt"));
+		List<Point> res = Exo6.divide(lb, 0, lb.size()-1);
 		
-		String svg = IO.toSVGFormat(l);
+		System.out.println(res);
+		String svg = IO.toSVGFormat(res);
 		IO.writeToSVG(svg);
 
 	}
