@@ -66,19 +66,7 @@ public class Exo6 {
 				heightList2 = l2.get(indice_l2).y;
 				indice_l2++;
 			}
-			/*else
-			{
-				//les deux x sont similaires
-				axis_tmp = l1.get(indice_l1).x;
-				
-				if (l1.get(indice_l1).y>l2.get(indice_l2).y)
-					heightList1 = l1.get(indice_l1).y;
-				else
-					heightList2 = l2.get(indice_l2).y;
-				
-				indice_l1++;
-				indice_l2++;
-			}*/
+			
 			
 			Point newPoint = new Point(axis_tmp,Math.max(heightList1,heightList2));
 			res.add(newPoint);
