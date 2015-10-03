@@ -118,5 +118,20 @@ public class IO {
 		}
 	}
 	
+	public static List<Point> decompact(List<Point> l)
+	{
+		int lastY = 0;
+		List<Point> res = new ArrayList<Point>();
+		
+		for(Point p : l)
+		{
+			res.add(new Point(p.x,lastY));
+			res.add(p);
+			lastY = p.y;
+		}
+		return res;
+ 	
+	}
+	
 
 }

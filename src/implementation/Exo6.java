@@ -78,10 +78,30 @@ public class Exo6 {
 		for(int i = indice_l2;i<l2.size();i++)
 			res.add(l2.get(i));
 		
-		return res;
+		return reduce(res);
 		
 	}
-
+	
+	/**
+	 * Remove duplicate i the skyline list
+	 * @param l The list to be reduced
+	 * @return A skyline with no rdundant information
+	 */
+	public static List<Point> reduce(List<Point> l)
+	{
+		for(int i=0;i<l.size()-2;i++)
+		{
+			if(l.get(i).x==l.get(i+1).x)
+				l.remove(i);
+		}
+		
+		for(int i=0;i<l.size()-2;i++)
+		{
+			if(l.get(i).y==l.get(i+1).y)
+				l.remove(i+1);
+		}
+		return l;
+	}
 	
 
 }
