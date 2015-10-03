@@ -6,7 +6,7 @@ import util.Building;
 import util.Point;
 import util.IO;
 
-public class Exo4 {
+public class Exo6 {
 	
 	/**
 	 * Resolution 
@@ -22,7 +22,11 @@ public class Exo4 {
 		return IO.toSVGFormat(findSkyline(window));
 	}
 
-	
+	/**
+	 * Build the boolean table representing the building
+	 * @param l The list containing the building to add to the table.
+	 * @param window The table that will contain the buildings.
+	 */
 	private static void buildWindow(List<Building> l,boolean[][] window ) {
 		for (Building b : l)
 		{
