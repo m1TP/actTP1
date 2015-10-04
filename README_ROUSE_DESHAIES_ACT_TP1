@@ -5,3 +5,42 @@ Rendu tp ACT
 
 
 
+
+
+
+
+
+Q4:
+
+Construction de la "ville", on ajoute les bâtiments un a un dans le tableau de booleen.
+
+On suppose que si b est un pointeur vers un bâtiment, 
+b.g, b.gh et b.d sont des accesseurs respectivement à
+la coordonnée la plus a gauche, la hauteur et la coordonnée la plus a droite du bâtiment b.
+
+On suppose aussi que les bâtiments sont dans une liste nommé listeBatiment qui est passé en paramètre
+et on à hauteur et largeur qui seront les limites du tableau de booléen à remplir, eux aussi passés en paramètre.
+
+naif_skyline(listeBatiment, hauteur, largeur ):
+	
+	/* 1ere étape: Initialisation et remplissage du tableau de booléen. */
+	
+	fenetre[hauteur][largeur] = false     // On initialise toutes les cases du tableau avec la valeur faux
+							              // cela coûte O(hauteur*largeur)
+							              // on considère que hauteur et largeur sont des valeurs suffisantes pour 
+							              // contenir tous les bâtiments de la liste.
+	
+	tant que !listeBatiment.vide() :     // N batiments
+		b = listeBatiment.pop() //on sort le premier element de la liste O(1)
+		
+		pour i de 0 a b.h-1:            //on parcours toute la hauteur du batiment, ds le pire des cas, ce sera la hauteur de la fenetre donc O(hauteur)
+			pour j de b.g a b.d-1:      //on parcours toute la largeur du batiment, ds le pire des cas, ce sera la largeur de la fenetre donc O(largeur)
+				fenetre[i][j] = true    //acces dans un tableau O(1)
+	
+										//on a donc O(N*hauteur*largeur) pour le remplissage du tableau.
+										
+
+	/* 2eme étape: Construction de la ligne de toit */
+	
+	
+	
