@@ -93,6 +93,16 @@ public class IO {
 		return l;
 	}
 	
+	public static List<Point> buildingToSkyline(List<Building> lb)
+	{
+		List<Point> res = new ArrayList<Point>();
+		for(Building b : lb)
+		{
+			res.addAll(b.toSkyline());
+		}
+		return res;
+	}
+	
 	public static void viewBuilding(boolean[][] tab) 
 	{
 		for(int i=tab.length-1;i>=0;i--)
@@ -106,6 +116,21 @@ public class IO {
 			}
 			System.out.println("");
 		}
+	}
+	
+	public static List<Point> decompact(List<Point> l)
+	{
+		int lastY = 0;
+		List<Point> res = new ArrayList<Point>();
+		
+		for(Point p : l)
+		{
+			res.add(new Point(p.x,lastY));
+			res.add(p);
+			lastY = p.y;
+		}
+		return res;
+ 	
 	}
 	
 

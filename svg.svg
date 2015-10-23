@@ -1,2 +1,2 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" viewBox="-10 -150 200 150">
-<polyline points="2,4 3,-8 4,16 5,-32 6,64 " stroke="blue" stroke-width="1" fill="none" transform="scale(5,-5)"/></svg>
+<polyline points="1,0 1,10 2,10 2,12 7,12 7,6 8,6 8,0 9,0 9,4 10,4 10,8 12,8 12,2 14,2 14,0 " stroke="blue" stroke-width="1" fill="none" transform="scale(5,-5)"/></svg>

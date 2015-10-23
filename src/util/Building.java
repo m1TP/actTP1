@@ -1,5 +1,6 @@
 package util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Building {
@@ -23,5 +24,15 @@ public class Building {
 		this.h = h;
 		this.d = d;
 	}
+	
+	public List<Point> toSkyline()
+	{
+		List<Point> res = new ArrayList<Point>();
+		res.add(new Point(g,h));
+		res.add(new Point(d,0));
+		return res;
+	}
+	
+	
 	
 }

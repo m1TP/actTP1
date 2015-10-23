@@ -7,8 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import util.Building;
-import util.Point;
+
 import util.IO;
+import util.Point;
+
+
 
 public class Main {
 
@@ -16,19 +19,21 @@ public class Main {
 	public static void main(String[] args) {
 		
 		/*
-		List<Point> l = new ArrayList<Point>();
-		 
-		for(int i=2;i<7;i++)
-			l.add(new Point(i,(int)Math.pow(-2, i)));
+
+1 10 5
+5 6 8
+10 8 12
+2 12 7
+9 4 11
+11 2 14
+		 */
+		List<Building> lb = IO.readBuilding(new File("building.txt"));
+		List<Point> res = Exo6.divide(lb, 0, lb.size()-1);
 		
-		String svg = SVG.toSVGFormat(l);
-		SVG.writeToSVG(svg);
-		*/
-		
-		List<Building> l = IO.readBuilding(new File("building.txt"));
-		
-		Exo6.solve(l);
-		
+		System.out.println(IO.decompact(res));
+		String svg = IO.toSVGFormat(IO.decompact(res));
+		IO.writeToSVG(svg);
+
 	}
 
 }
